@@ -1,7 +1,6 @@
-import React from 'react';
-import { Link } from "react-router"; // or "react-router-dom" depending on your setup
+import { Link } from "react-router-dom";
 
-export default function Home() {
+const Home = () => {
   return (
     <div className="min-h-screen bg-slate-50 p-8 font-sans text-slate-900">
       {/* Header Section */}
@@ -15,11 +14,10 @@ export default function Home() {
       </header>
 
       {/* Navigation Grid */}
-      <main className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
-        
+      <main className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
         {/* LED Simulator Card */}
-        <Link 
-          to="/led" 
+        <Link
+          to="/led"
           className="group relative flex flex-col rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md active:scale-95"
         >
           <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-red-100 text-2xl group-hover:bg-red-500 group-hover:animate-pulse">
@@ -34,9 +32,26 @@ export default function Home() {
           </div>
         </Link>
 
-        {/* Resistors Card */}
-        <Link 
-          to="/resisters" 
+        {/* LED Simulator 2 Card */}
+        <Link
+          to="/led2"
+          className="group relative flex flex-col rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md active:scale-95"
+        >
+          <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-amber-100 text-2xl group-hover:bg-amber-500">
+            ⚡
+          </div>
+          <h2 className="mb-2 text-2xl font-bold text-slate-800">LED Simulator 2.0</h2>
+          <p className="mb-6 flex-grow text-slate-600">
+            Advanced simulation featuring multi-LED arrays and power dissipation analysis.
+          </p>
+          <div className="text-sm font-semibold text-amber-600">
+            Try v2.0 Beta →
+          </div>
+        </Link>
+
+        {/* Resistor Guide Card */}
+        <Link
+          to="/resisters"
           className="group relative flex flex-col rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md active:scale-95"
         >
           <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100 text-2xl group-hover:bg-blue-500">
@@ -51,12 +66,30 @@ export default function Home() {
           </div>
         </Link>
 
+        {/* Practice / Lab Exercises Card - NEW */}
+        <Link
+          to="/practice"
+          className="group relative flex flex-col rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md active:scale-95"
+        >
+          <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-green-100 text-2xl group-hover:bg-green-500">
+            🛠️
+          </div>
+          <h2 className="mb-2 text-2xl font-bold text-slate-800">Practice & Labs</h2>
+          <p className="mb-6 flex-grow text-slate-600">
+            Hands-on exercises, circuit challenges, and lab simulations to build your skills.
+          </p>
+          <div className="text-sm font-semibold text-green-600">
+            Start Practicing →
+          </div>
+        </Link>
       </main>
 
       {/* Simple Footer */}
       <footer className="mt-16 text-center text-sm text-slate-400">
-        &copy; {new Date().getFullYear()} Electronic Tools Inc.
+        © {new Date().getFullYear()} Electronic Tools Inc.
       </footer>
     </div>
   );
-}
+};
+
+export default Home;
